@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Sizing</title>
+    <style>
+        .container {
+            border: 2px solid green;
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Sizing Priority */
+        /* Content-width(default) < width < flex-basis < min-width/max-width */
+
+        .container > * {
+            width: 300px; /*if overall width is less than 400px(not enough space), it will shrink*/
+            flex-basis: 0; /* 0: equal*/
+            /* max-width: 100px; */
+            /* min-width: 300px; */
+
+            flex-grow: 1; /* 0: off,    1: on --- max-width*/
+            flex-shrink: 1; /* min-width */ 
+        }
+
+        .home {
+            background-color: yellow;
+        }
+
+        .about {
+            background-color: aquamarine;
+        }
+
+        .work {
+            background-color: violet;
+        }
+
+        .contact {
+            background-color: indianred;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="home">Home</div>
+        <div class="about">About</div>
+        <div class="work">Work that I love</div>
+        <div class="contact">Contact Us</div>
+    </div>
+</body>
+</html>
